@@ -1,0 +1,308 @@
+body {
+  background: var(--bs-dark);
+  overflow-y: hidden;
+}
+::selection{
+  background-color: var(--bs-gray-300);
+  color: var(--bs-dark);
+
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: var(--bs-white);
+  border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--bs-gray);
+}
+:root {
+  --animate-delay: 0.1s;
+}
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --------- S T A R T - A S I D E - N A V - M E N U - S T Y L E  ----------- */
+#side-menu {
+  left: -15rem;
+  z-index: 928;
+}
+#side-menu .menu {
+  max-width: 15rem;
+}
+#side-menu .menu .list-links li {
+  cursor: pointer;
+  padding-left: 0;
+  transition: 0.3s;
+}
+#side-menu .menu .list-links li:hover {
+  padding-left: 1rem;
+  color: var(--bs-white);
+}
+#side-menu .menu .copy-rights {
+  font-size: 0.9rem;
+}
+#side-menu #options img {
+  width: 2rem;
+}
+#side-menu #options #btnToggle {
+  font-size: 1.5rem;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+#side-menu #options #btnToggle:hover {
+  opacity: 1;
+}
+/* --------- E N D - A S I D E - N A V - M E N U - S T Y L E  ----------- */
+
+/* --------- S T A R T - I N P U T - S E A R C H - S T Y L E  ----------- */
+@media (max-width: 600px) {
+  #search .container {
+      flex-direction: column;
+  }
+  #search .container .form-floating {
+      width: 80% !important;
+      margin-block: 0.7rem;
+  }
+}
+/* --------- E N D - I N P U T - S E A R C H - S T Y L E  ----------- */
+
+/* --------- S T A R T - M E A L S - B O X E S - S T Y L E  ----------- */
+#mealsBoxesBody {
+  min-height: 90vh;
+}
+.box {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid var(--bs-white);
+}
+.box .box-brief {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: top 0.6s ease-in-out;
+}
+.box:hover .box-brief {
+  top: 0;
+}
+.box .box-brief h2 {
+
+  font-size: 1.5rem;
+}
+
+/* --------- E N D - M E A L S - B O X E S - S T Y L E  ----------- */
+
+/* --------- S T A R T - M E A L S - D E T A I L S - S T Y L E  ----------- */
+#meal-details .meal-img {
+  max-width: 25rem;
+  margin-inline: auto;
+}
+#meal-details button a {
+  color: inherit;
+}
+#meal-details #mealRecipes span,
+#meal-details #mealTags span {
+  transition: 0.3s;
+  opacity: 0.8;
+  cursor: grab;
+}
+#meal-details #mealRecipes span:hover,
+#meal-details #mealTags span:hover {
+  opacity: 1;
+}
+
+/* --------- E N D - M E A L S - D E T A I L S - S T Y L E  ----------- */
+
+/* --------- S T A R T - C A T E G O R I E S - S T Y L E  ----------- */
+#categories .box {
+  padding-block: 3rem;
+}
+#categories .box .box-brief {
+  padding-block: 1.5rem;
+}
+/* --------- E N D - C A T E G O R I E S - S T Y L E  ----------- */
+
+/* --------- S T A R T - A R E A - S T Y L E  ----------- */
+#area .city {
+  position: relative;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+#area .city::before,
+#area .city::after {
+  content: "";
+  background-color: var(--bs-white);
+  height: 100%;
+  width: 0.3rem;
+  position: absolute;
+  transform: scaleY(0);
+  transition: 0.3s;
+  top: 0;
+}
+#area .city::before {
+  border-radius: 0.3rem 0 0 0.3rem;
+  left: 0;
+  transform-origin: left top;
+}
+#area .city::after {
+  border-radius: 0 0.3rem 0.3rem 0;
+  right: 0;
+  transform-origin: bottom right;
+}
+#area .city:hover::before,
+#area .city:hover::after {
+  transform: scaleY(1);
+}
+/* --------- E N D - A R E A - S T Y L E  ----------- */
+
+/* --------- S T A R T - I N G R E D I E N T S - S T Y L E  ----------- */
+#ingredients .ingredient {
+  position: relative;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  height: 22rem;
+}
+#ingredients .ingredient::before,
+#ingredients .ingredient::after {
+  content: "";
+  background-color: var(--bs-white);
+  height: 0.5rem;
+  width: 100%;
+  position: absolute;
+  transform: scalex(0);
+  transition: 0.3s;
+  left: 0;
+}
+#ingredients .ingredient::before {
+  border-radius: 0.3rem 0.3rem 0 0;
+  top: 0px;
+  transform-origin: left top;
+}
+#ingredients .ingredient::after {
+  border-radius: 0 0 0.3rem 0.3rem;
+  bottom: 0;
+  transform-origin: bottom right;
+}
+#ingredients .ingredient:hover::before,
+#ingredients .ingredient:hover::after {
+  transform: scalex(1);
+}
+#ingredients .ingredient h2 {
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 1.5rem;
+}
+#ingredients .ingredient .ingredient-desc {
+  max-height: 60%;
+  padding-inline: 0.5rem;
+  overflow-y: auto;
+}
+#ingredients .ingredient .ingredient-desc::-webkit-scrollbar-thumb {
+  background-color: var(--bs-gray-700);
+}
+
+/* Medai */
+@media (max-width: 768px) {
+  #ingredients .ingredient {
+      height: fit-content;
+  }
+  #ingredients .ingredient .ingredient-desc {
+      max-height: fit-content;
+      overflow: hidden;
+  }
+}
+/* --------- E N D - I N G R E D I E N T S - S T Y L E  ----------- */
+
+/* --------- S T A R T - C O N T A C T - U S - S T Y L E  ----------- */
+#btnSubmit {
+  width: fit-content;
+  font-size: 1.3rem;
+}
+/* --------- E N D - C O N T A C T - U S - S T Y L E  ----------- */
+
+/* ---------- S T A R T - H T M L - F O N T - S I Z E - R E S P O N S I V E  ---------- */
+@media screen and (max-width: 1199px) {
+  html {
+      font-size: 14px !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  html {
+      font-size: 13px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+      font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 575px) {
+  html {
+      font-size: 10px !important;
+  }
+}
+/* ---------- E N D - H T M L - F O N T - S I Z E - R E S P O N S I V E  ---------- */
+/* !Loader */
+#loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 565;
+}
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+  }
+  4.9% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+  }
+  5% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+  }
+  100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+  }
+}

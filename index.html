@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Wow -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <body class="bg-black">
+    <!-- Loading Page -->
+    <div id="loading-page" class="d-flex-center bg-black">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- Loading Page -->
+
+    <!-- |- S T A R T - A S I D E - N A V - M E N U - S E C T I O N  -| -->
+    <div class="vh-100 d-flex position-fixed top-0" id="side-menu">
+        <div class="menu d-flex flex-column justify-content-between h-100 py-3 bg-black">
+            <!-- |=> S T A R T - S E C T I O N - L I N K S  <=| -->
+            <ul class="list-links list-unstyled px-4 text-white-50" id="nav_Menu">
+                <li class="text-capitalize text-white my-4 animate__delay-0s">categories</li>
+                <li class="text-capitalize text-white my-4 animate__delay-1s">search</li>
+                <li class="text-capitalize text-white my-4 animate__delay-2s">area</li>
+                <li class="text-capitalize text-white my-4 animate__delay-3s">ingredients</li>
+                <li class="text-capitalize text-white my-4 animate__delay-4s">contact</li>
+            </ul>
+            <!-- |=> E N D - S E C T I O N - L I N K S  <=| -->
+
+            <!-- |=> S T A R T - C O P Y - R I G H T S  <=| -->
+            <div class="ps-4">
+                <ul class="list-unstyled d-flex">
+                    <li class="mx-2">
+                        <a href="#hhtps://www.facebook.com">
+                            <i class="fa fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="mx-2">
+                        <a href="#hhtps://www.twitter.com">
+                            <i class="fa fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="mx-2">
+                        <a href="#hhtps://www.youtube.com">
+                            <i class="fa fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copy-rights text-white">
+                    Copyright 2023 All Rights Reserved.
+                </p>
+            </div>
+            <!-- |=> E N D - C O P Y - R I G H T S  <=| -->
+        </div>
+        <div id="options" class="d-flex justify-content-between flex-column h-100 py-4 px-2 bg-white">
+
+            <a href="#">
+                <img src="logo.png" alt="Logo" class="logo">
+            </a>
+
+            <button type="button" class="shadow-none bg-transparent border-0" id="btnToggle">
+                <i class="fa fa-bars bg-white"></i>
+                <i class="fa fa-xmark bg-white" style="display: none;"></i>
+            </button>
+
+            <div class="d-flex flex-column align-items-center">
+                <a href="#" class="my-2">
+                    <i class="fa fa-globe"></i>
+                </a>
+                <a href="#" class="my-2">
+                    <i class="fa fa-share-alt"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- |- E N D - A S I D E - N A V - M E N U - S E C T I O N  -| -->
+
+    <!-- |- S E A R C H - S E C T I O N  -| -->
+    <section id="search" class="mt-4" style="display: none;">
+        <div class="container d-flex">
+            <div class="form-floating w-100 mx-4">
+                <input type="text" class="form-control bg-transparent border-0 border-bottom text-white"
+                    id="searchByName" placeholder="c">
+                <label for="searchByName" class="text-white-50">Search By Name</label>
+            </div>
+            <div class="form-floating w-100 mx-4">
+                <input type="text" maxlength="1" class="form-control bg-transparent border-0 border-bottom text-white"
+                    id="searchByFLetter" placeholder="c">
+                <label for="searchByFLetter" class="text-white-50">Search By First Letter</label>
+            </div>
+        </div>
+    </section>
+    <!-- |- E N D - I N P U T - S E A R C H - S E C T I O N  -| -->
+
+    <!-- |- S T A R T - M E A L S - B O X E S - S E C T I O N  -| -->
+    <section id="meals-boxes" class="position-relative">
+
+        <div class=" container my-5">
+            <div id="mealsBoxesBody" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gx-0 gx-md-4 gy-4">
+
+            </div>
+        </div>
+    </section>
+    <!-- |- E N D - M E A L S - B O X E S - S E C T I O N  -| -->
+
+    <!-- |- S T A R T - M E A L S - D E T A I L S - S E C T I O N  -| -->
+    <section id="meal-details" class="mb-5" style="display: none;">
+
+        <div class=" container my-5">
+            <div class="row gx-0 gx-md-4 gy-4 text-white">
+
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="meal-img rounded-3 border border-4 border-white">
+                            <img src="" class="w-100" alt="">
+                        </div>
+                        <h2 class="meal-name fw-bold mt-3"></h2>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="d-flex flex-column">
+                        <div>
+                            <h2>Instructions</h2>
+                            <p id="mealInstruction" class="text-gray"></p>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-1 mt-2">
+                            <h4 class="mb-0">Area :</h4>
+                            <p id="mealArea" class="fs-5 mb-0"></p>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-1 mt-3">
+                            <h4 class="mb-0">Category :</h4>
+                            <p id="mealCategory" class="fs-5 mb-0"></p>
+                        </div>
+
+                        <div class="mt-4">
+                            <h2 class="fw-bold">Recipes :</h2>
+                            <div id="mealRecipes" class="d-flex flex-wrap gap-3 mt-3 text-dark">
+
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h2 class="fw-bold">Tags :</h2>
+                            <div id="mealTags" class="d-flex flex-wrap gap-3 mt-3 text-dark">
+
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3 mt-5">
+                            <button type="button" class="btn btn-primary">
+                                <a href="" target="_blank" id="btnSource"
+                                    class="text-white text-decoration-none fw-bold fs-5">Source</a>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger">
+                                <a href="" target="_blank" id="btnYoutube"
+                                    class="text-decoration-none fw-bold fs-5">Youtube</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- |- E N D - M E A L S - D E T A I L S - S E C T I O N  -| -->
+
+    <!-- |- S T A R T - M E A L S - B O X E S - S E C T I O N  -| -->
+    <section id="categories" class="position-relative" style="display: none;">
+
+        <div class="container my-5">
+            <div id="catBoxesBody" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gx-0 gx-md-4 gy-4">
+
+            </div>
+        </div>
+    </section>
+    <!-- |- E N D - M E A L S - B O X E S - S E C T I O N  -| -->
+
+    <!-- |- S T A R T - A R E A - S E C T I O N -| -->
+    <section id="area" class="position-relative" style="display: none;">
+        <div class="container my-5">
+            <div id="areaBoxesBody" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gx-0 gx-md-4 gy-4">
+
+            </div>
+        </div>
+    </section>
+    <!-- |- E N D - A R E A - S E C T I O N -| -->
+
+    <!-- |- S T A R T - I N G R E D I E N T S - - S E C T I O N  -| -->
+    <section id="ingredients" class="position-relative" style="display:none;">
+        <div class="container my-5">
+            <div id="ingredBoxesBody" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-0 gx-md-4 gy-4">
+            </div>
+        </div>
+    </section>
+    <!-- |- E N D - I N G R E D I E N T S - - S E C T I O N  -| -->
+
+    <!-- |- S T A R T - C O N T A C T - U S - - S E C T I O N  -| -->
+    <section id="contact" style="display: none;">
+        <form action="" id="contactForm">
+            <div class="container d-flex-center flex-column vh-100">
+                <h2 class="text-white fs-1 fw-bolder mb-5">Contact Us ...</h2>
+
+                <div class="row row-cols-1 row-cols-md-2 gy-3 gx-5 justify-content-center needs-validation">
+
+                    <div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control bg-transparent border-0 border-bottom text-white"
+                                id="userName" autocomplete="false" required placeholder="user Name">
+                            <label for="userName" class="text-capitalize text-gray">
+                                enter your name
+                            </label>
+                            <p class="invalid-feedback text-white">
+                                Special Characters and Numbers not allowed
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="form-floating">
+                            <input type="email" class="form-control bg-transparent border-0 border-bottom text-white"
+                                id="userEmail" placeholder="name@example.com">
+                            <label for="userEmail" class="text-capitalize text-gray">
+                                Enter your Email
+                            </label>
+                            <p class="invalid-feedback text-white">
+                                Please Enter Valid email. *Ex: xxx@yyy.zzz
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="form-floating">
+                            <input type="tel" class="form-control bg-transparent border-0 border-bottom text-white"
+                                id="userPhone" placeholder="phone">
+                            <label for="userPhone" class="text-capitalize text-gray">
+                                Enter your phone
+                            </label>
+                            <p class="invalid-feedback text-white">
+                                Please Enter Valid Phone, 11 Numebr
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="form-floating">
+                            <input type="number" min="15"
+                                class="form-control bg-transparent border-0 border-bottom text-white" id="userAge"
+                                placeholder="your age">
+                            <label for="userAge" class="text-capitalize text-gray">
+                                Enter your age
+                            </label>
+                            <p class="invalid-feedback text-white">
+                                Please Enter Valid Age, Must greater Than 14 year
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control bg-transparent border-0 border-bottom text-white"
+                                id="userPassword" placeholder="Password">
+                            <label for="userPassword" class="text-capitalize text-gray">
+                                Enter your password
+                            </label>
+                            <p class="invalid-feedback text-white">
+                                Enter valid password, Minimum eight characters, at least one letter and one number
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control bg-transparent border-0 border-bottom text-white"
+                                id="userConfirmPassword" placeholder="confirm Password">
+                            <label for="userConfirmPassword" class="text-capitalize text-gray">
+                                Confirm your password
+                            </label>
+                            <p class="invalid-feedback text-white">
+                                Password Doesn't Match, Please Try Againg
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 text-center">
+                        <button type="submit" class="form-control btn btn-outline-light py-2 px-3" id="btnSubmit"
+                            disabled>Submit</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+    <!-- |- E N D - C O N T A C T - U S - - S E C T I O N  -| -->
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="js/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <!-- Custom -->
+    <script src="js/main.js"></script>
+</body>
+</html>
